@@ -44,10 +44,9 @@ def gibbs_horseshoe(y, X, N_sims):
         lambda_loc = np.random.exponential(1, p) / (tau_loc / 2 + phi_loc / 2)
         phi_loc = np.random.gamma((p + 1) / 2, sum(lambda_loc) / 2 + eta_loc / 2, 1)
         eta_loc = np.random.exponential(phi_loc / 2 + 1 / 2, 1)
-    # end for loop
 
     return (beta_out, sigma_sq_out, tau_out)
-
+    # end for loop
 
 filename = 'diabetes.csv'
 data = pd.read_csv(filename)
